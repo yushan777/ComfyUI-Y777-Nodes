@@ -25,7 +25,7 @@ class Y777SaveFilenameList:
             }
         }
     RETURN_TYPES = ("STRING", )
-    RETURN_NAMES = ("name",)
+    RETURN_NAMES = ("fname",)
     FUNCTION = "Get_AspectRatio"
     CATEGORY = "image"
 

@@ -47,6 +47,38 @@ class Y777SDXLAspectRatio:
             width, height = 1536, 640
         return(width, height)
 
+class Y777SDXLAspectRatio_Short:
+    # cut down version of the one above for testing
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+                "required": {
+                    "aspectRatio": ([
+                    "1. 1024x1024 square (1:1)", 
+                    "2. 896x1152 portrait (1:1.29)", 
+                    "3. 832x1216 portrait (1:1.46)",  
+                    "4. 1216x832 landscape (1.46:1)",                     
+                    "5. 1344x768 landscape (1.75:1)"],)
+            }
+        }
+    RETURN_TYPES = ("INT", "INT")
+    RETURN_NAMES = ("Width", "Height")
+    FUNCTION = "Get_AspectRatio"
+    CATEGORY = "Y777"
+
+    def Get_AspectRatio(self, width, height, aspectRatio):
+        if aspectRatio == "1. 1024x1024 square (1:1)":
+            width, height = 1024, 1024
+        elif aspectRatio == "2. 896x1152 portrait (1:1.29)":
+            width, height = 896, 1152
+        elif aspectRatio == "3. 832x1216 portrait (1:1.46)":
+            width, height = 832, 1216
+        elif aspectRatio == "4. 1216x832 landscape (1.46:1)":
+            width, height = 1216, 832
+        elif aspectRatio == "5. 1344x768 landscape (1.75:1)":
+            width, height = 1344, 768
+        return(width, height)
+
 class Y777SaveFilenameList:
 
     @classmethod
@@ -98,10 +130,12 @@ class Y777SaveFilenameList:
 
 NODE_CLASS_MAPPINGS = {
     "Y777SDXLAspectRatio": Y777SDXLAspectRatio,
+    "Y777SDXLAspectRatio_Short": Y777SDXLAspectRatio_Short,
     "Y777SaveFilenameList": Y777SaveFilenameList
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "Y777SDXLAspectRatio": "Y777 SDXL Aspect Ratio",
+    "Y777SDXLAspectRatio_Short": "Y777 SDXL Aspect Ratio (Short)",
     "Y777SaveFilenameList": "Y777 Save File Name List"
 }

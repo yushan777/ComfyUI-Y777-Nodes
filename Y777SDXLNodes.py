@@ -94,7 +94,7 @@ class Y777SaveFilenameList:
             fname = "step=9000/base"
         elif fileName == "step=10000/base":
             fname = "step=10000/base"
-        return(name,)
+        return(fname,)
 
 NODE_CLASS_MAPPINGS = {
     "Y777SDXLAspectRatio": Y777SDXLAspectRatio,

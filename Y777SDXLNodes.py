@@ -88,8 +88,9 @@ class Y777SDXLAspectRatio_Short:
 # ========================================================================
 # produces a drop-down list of pre-defined filenames for saving images
 # names are saved in filenames.txt
-# if entry selected is Custom, then it will use the name set in custom field.
-class Y777SaveFilenameList:
+# if entry selected is Custom, then it will use the name set in custom 
+# field or whatever is fed into it as input
+class Y777CustomFilename:
      
     @classmethod
     def INPUT_TYPES(s):
@@ -138,11 +139,11 @@ class Y777SaveFilenameList:
 NODE_CLASS_MAPPINGS = {
     "Y777SDXLAspectRatio": Y777SDXLAspectRatio,
     "Y777SDXLAspectRatio_Short": Y777SDXLAspectRatio_Short,
-    "Y777SaveFilenameList": Y777SaveFilenameList
+    "Y777CustomFilename": Y777CustomFilename
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "Y777SDXLAspectRatio": "Y777 SDXL Aspect Ratio",
     "Y777SDXLAspectRatio_Short": "Y777 SDXL Aspect Ratio (Short)",
-    "Y777SaveFilenameList": "Y777 Save File Name List"
+    "Y777CustomFilename": "Y777 Custom Filename"
 }
